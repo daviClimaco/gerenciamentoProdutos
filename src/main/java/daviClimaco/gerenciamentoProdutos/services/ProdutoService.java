@@ -23,7 +23,7 @@ public class ProdutoService {
         produtoRepository.deleteById(id);
     }
 
-    public Produto buscarProdutoPirId(Long id){
+    public Produto buscarProdutoPorId(Long id){
         return produtoRepository.findById(id).orElse(null);
     }
 
