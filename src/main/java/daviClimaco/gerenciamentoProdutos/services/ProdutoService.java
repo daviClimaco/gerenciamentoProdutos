@@ -15,8 +15,8 @@ public class ProdutoService {
         this.produtoRepository = produtoRepository;
     }
 
-    public void salvar(Produto produto){
-        produtoRepository.save(produto);
+    public Produto salvar(Produto produto){
+        return produtoRepository.save(produto);
     }
 
     public void deletar(Long id){//deleta pelo id comoparametro
@@ -29,6 +29,11 @@ public class ProdutoService {
 
     public List<Produto> buscarTodos(){
         return produtoRepository.findAll();
+    }
+
+    public Produto atualizar(Long id, Produto produto){
+        produto.setId(id);
+        return produtoRepository.save(produto);
     }
 
 }
